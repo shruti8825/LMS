@@ -14,7 +14,8 @@ export class LoginPage {
   }
 
   async goto() {
-    await this.page.goto('http://localhost:5173/login');
+    // Uses the Playwright `baseURL` (set via config or BASE_URL env var).
+    await this.page.goto('/login');
     // Optional: Verify we're on the login page
     await expect(this.page).toHaveURL(/.*login/);
   }
